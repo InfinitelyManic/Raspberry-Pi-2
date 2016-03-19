@@ -1,6 +1,6 @@
 /* 
 	David @InfinitelyManic
-	Derived from: Raspberry Pi, Assembly Language, Bruce Smith; but is for BCM2835 so some modifications are required
+	Derived from: Raspberry Pi, Assembly Language, Bruce Smith; which is for BCM2835 so some modifications are required
 	GPIO PIN access via memory mapping file to GPIO Controller
 	This example sets Raspberry Pi 2 GPIO pin 47 or 'ACT' while running Linux Raspbian... 
 */
@@ -18,17 +18,16 @@
 	.align  
 main:
 	sub sp, sp, #16
-	nop
-
+	
 	bl open_file 
-	str r0, [sp, #0] 			// store file handler on stack  
+	str r0, [sp, #0] 			// store file handler to 1st level of stack  
 	bl map_file
 	str r0, [sp, #8]			// store virt GPIO mem address on stack 
 	
-.gpio:
+.gpio: 
 	/*
 	.init_output:				// initilize PIN for OUTPUT; may not be neccesary for PIN 47 on Raspberry Pi 2
-	ldr r3, [sp, #8]			// virt GPIO base 
+	ldr r3, [sp, #8]			// load virt GPIO base 
 	add r3, r3, #16				// point to GPSEL4 
 	ldr r2, [r3]				// get contents of GPSEL4
 	orr r2, r2, #0b111<<21			// set 3 bits for PIN 47; 0xe00000
@@ -36,7 +35,7 @@ main:
 	*/
 
 	.clear:
-	ldr r3, [sp, #8]			// virt GPIO base 
+	ldr r3, [sp, #8]			// load virt GPIO base 
 	add r3, r3, #44				// GPCLR1
 	ldr r2, [r3] 				// get content of GPSET1
 	orr r2, #1<<15				// s/u PIN 47
@@ -61,7 +60,7 @@ open_file:
 
 map_file:
 	push {r1-r3, lr}
-	str r0, [sp, #0]			// store returned file handle to 4th level of stack
+	str r0, [sp, #0]			// store returned file handle to 1st level of stack
 	ldr r3, [sp, #0]			// copy file handle to r3 
 	// parameters for mmap			// nmap will map files or devices into memory 
 	str r3, [sp, #0]			// copy file handle to 1st level of stack for mmap
