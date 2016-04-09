@@ -5,7 +5,7 @@ gpio_set_47.s  - sets PIN 47
 
 gpio_clear_47.s - clears PIN 47
 
-You can use the code to blink the 'ACT' led with Bash like so:
+You can use the code to blink the 'ACT' LED with Bash like so:
 
 <code>
 $ while :; do sudo ./gpio_clear_47; sleep .5 ; sudo ./gpio_set_47 ; done
