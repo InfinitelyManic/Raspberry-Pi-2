@@ -17,7 +17,6 @@ This is just a simple example of how to access GPIO from Raspian; which is not p
 #!/bin/bash
 what=$1
 echo $what | sudo tee /sys/class/leds/led0/trigger && echo $what | sudo tee /sys/class/leds/led1/trigger
-unset what
 </code>
 
 Next goal: do a baremetal version someday... 
