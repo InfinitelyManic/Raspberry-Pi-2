@@ -55,7 +55,7 @@ _start:
 
         add r10, #1             // increment counter n
         cmp r10, #3             // we only want to loop n times
-        blt 1b
+        ble 1b
 
         //bl close_fd
         bl write_int_result     // followed by the four (4) bytes.
