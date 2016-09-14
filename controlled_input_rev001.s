@@ -140,6 +140,7 @@ flush:
         mov r7, #3              // syscall read
         mov r0, #1              // fd stdout
         ldr r1,=buffer
-        mov r2, #255            // arbitrary
+        movw r2, #0xffff            // arbitrary
+        movt r2, #0x7fff            // arbitrary
         svc #0
         pop {r1-r7,pc}
