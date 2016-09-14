@@ -3,6 +3,7 @@
         Based on the code dev by Kevin M. Thomas @ https://github.com/kevinmthomasse/controlled_input/blob/master/controlled_input.s
         Start Date: 09/12/2016
         compiled on:
+        Linux scw-cb8d4b 3.2.34-30 #17 SMP Mon Apr 13 15:53:45 UTC 2015 armv7l armv7l armv7l GNU/Linux
         Linux raspberrypi 4.4.11-v7+ #888 SMP Mon May 23 20:10:33 BST 2016 armv7l GNU/Linux
         as controlled_input.s -o controlled_input.o && ld controlled_input.o -o controlled_input
         Last Revision: 09/14/2016 _002
