@@ -6,7 +6,7 @@
         Linux scw-cb8d4b 3.2.34-30 #17 SMP Mon Apr 13 15:53:45 UTC 2015 armv7l armv7l armv7l GNU/Linux
         Linux raspberrypi 4.4.11-v7+ #888 SMP Mon May 23 20:10:33 BST 2016 armv7l GNU/Linux
         as controlled_input.s -o controlled_input.o && ld controlled_input.o -o controlled_input
-        Last Revision: 09/14/2016 _002
+        Last Revision: 09/15/2016 _003
 */
 
 .bss
@@ -141,7 +141,8 @@ flush:
         mov r7, #3              // syscall read
         mov r0, #1              // fd stdout
         ldr r1,=buffer
-        movw r2, #0xffff            // arbitrary
-        movt r2, #0x7fff            // arbitrary
+        //movw r2, #0xffff
+        //movt r2, #0x7fff      // 0x7fffffff  - SSIZE_MAX on 32-bit OS
+        mov r2, #(1 << 30)      // 0x40000000  = 1,073,741,824 bytes
         svc #0
         pop {r1-r7,pc}
