@@ -141,8 +141,6 @@ flush:
         mov r7, #3              // syscall read
         mov r0, #2              // fd stderr
         ldr r1,=buffer
-        //movw r2, #0xffff
-        //movt r2, #0x7fff      // 0x7fffffff  - SSIZE_MAX on 32-bit OS
-        mov r2, #(1 << 30)      // 0x40000000  = 1,073,741,824 bytes
+        mov r2, #(1 << 30)      // 0x40000000  = 1,073,741,824 bytes; this works but stream spillover will over 
         svc #0
         pop {r1-r7,pc}
