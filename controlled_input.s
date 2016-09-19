@@ -81,6 +81,7 @@ write_prompt:
         mov r2, #len.prompt
         svc #0
         pop {r1-r7,pc}
+        
 read_buffer:
 //      movl $3, %eax
 //      movl $0, %ebx
@@ -109,7 +110,8 @@ write_result:
         mov r2, #len.result
         svc #0
         pop {r1-r7,pc}
-        write_int_result:
+        
+write_int_result:
 //      movl $4, %eax
 //      movl $1, %ebx
 //      movl $buffer, %ecx
