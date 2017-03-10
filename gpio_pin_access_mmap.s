@@ -13,7 +13,7 @@
         product: Raspberry Pi 2 Model B Rev 1.1
 
         compile:
-        $ gcc -g led_matrix.s -o led_matrix
+        $ gcc -g gpio_pin_access_mmap.s -o gpio_pin_access_mmap
 
         example run:
         while :; do sudo ./led_matrix ; sleep 1; done
