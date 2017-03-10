@@ -15,7 +15,7 @@
         $ gcc -g led_matrix.s -o led_matrix
 
         example run:
-        while :; do sudo ./led_matrix ; done
+        while :; do sudo ./led_matrix ; sleep 1; done
 
         Last Revision Date: 03/10/2017
 */
