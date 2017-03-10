@@ -1,8 +1,9 @@
 /*
         David @InfinitelyManic
-        Derived from: Raspberry Pi, Assembly Language, Bruce Smith; but is for BCM2835 so some modifications are required
+        Derived from: Raspberry Pi, Assembly Language, Bruce Smith; but is for BCM2835 so some modifications may be  required.
         GPIO PIN access via memory mapping file to GPIO controller
         This example sets Raspberry Pi 2 GPIO pin 47 or 'ACT' while running Linux Raspbian...
+        Documentation: https://www.raspberrypi.org/wp-content/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
 
         $ uname -a
         Linux raspberrypi 4.4.50-v7+ #970 SMP Mon Feb 20 19:18:29 GMT 2017 armv7l GNU/Linux
