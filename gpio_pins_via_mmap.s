@@ -47,7 +47,7 @@
         .equ    FSEL16,18
         .equ    FSEL15,15
         .equ    FSEL14,12
-                .equ    FSEL14,12
+        .equ    FSEL14,12
         .equ    FSEL13,9
         .equ    FSEL12,6
         .equ    FSEL11,3
@@ -194,10 +194,10 @@ exit:
         svc 0
 
 _delay:
-        ldr r9,=0xffffff
+        ldr r9,=0xffffff                        // arbitary 
         1:
         subs r9, #1
-        bpl 1b
+        bpl 1b                                  // branch while postive or N not set 
         bx lr
 
 init_output:                                    // init for OUTPUT //
