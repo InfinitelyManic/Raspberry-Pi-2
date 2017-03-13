@@ -70,7 +70,7 @@ _delay:
         bx lr
 
 // ****************************GPIO REGISTER AND PIN PARAMS ***********************************
-nit_output:                                    // init for OUTPUT //
+init_output:                                    // init for OUTPUT //
         ldr r3, [sp, #8]                        // virt GPIO base
         add r3, r3, #GPFSEL2                    // offset to GPFSELn=int(PIN#/10)= GPFSELn
         ldr r2, [r3]                            // get contents of GPFSELn
@@ -80,7 +80,7 @@ nit_output:                                    // init for OUTPUT //
 
 set_pin:
         ldr r3, [sp, #8]                        // virt GPIO base
-        add r3, r3, #GPSET0                     // offset to GPSETn = int(PIN#/31)=GPSETn
+        add r3, r3, #GPSET0                     // offset to GPSETn=int(PIN#/31)
         ldr r2, [r3]                            // get content of GPSETn
         orr r2, r2, #(1 << _23)                 // friendly PIN select; _=(PIN# mod 32)
         str r2,[r3]                             // _
@@ -88,12 +88,11 @@ set_pin:
 
 clear_pin:
         ldr r3, [sp, #8]                        // virt GPIO base
-        add r3, r3, #GPCLR0                     // offset to GPCLRn= int(PIN#/31)=GPCLRn=
+        add r3, r3, #GPCLR0                     // offset to GPCLRn=int(PIN#/31)
         ldr r2, [r3]                            // get content of GGPCLRn
         orr r2, r2, #(1 << _23)                 // friendly PIN select; _=(PIN# mod 32)
         str r2,[r3]                             //
         bx lr
-
 // ********************************************************************************************
 
 open_file:
