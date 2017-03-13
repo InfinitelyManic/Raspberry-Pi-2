@@ -67,6 +67,7 @@ _delay:
         bpl 1b
         bx lr
 
+// ****************************GPIO REGISTER AND PIN PARAMS ***********************************
 init_output:                                    // init for OUTPUT //
         ldr r3, [sp, #8]                        // virt GPIO base
         add r3, r3, #GPFSEL2                    // offset to GPFSELn = int(PIN#/10)= GPFSELn
@@ -90,6 +91,7 @@ clear_pin:
         orr r2, r2, #(1 << _23)                 // FSELn
         str r2,[r3]                             // friendly select FSELn
         bx lr
+// ********************************************************************************************
 
 open_file:
         push {r1-r3, lr}
