@@ -2,6 +2,8 @@
         David @InfinitelyManic
         Derived from: Raspberry Pi, Assembly Language, Bruce Smith; but is for BCM2835 so some modifications are required
         GPIO PIN access via memory mapping file to GPIO controller
+        Documentation: https://www.raspberrypi.org/wp-content/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
+
        
        $ uname -a
         Linux raspberrypi 4.4.50-v7+ #970 SMP Mon Feb 20 19:18:29 GMT 2017 armv7l GNU/Linux
