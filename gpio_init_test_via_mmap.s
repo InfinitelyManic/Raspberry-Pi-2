@@ -70,29 +70,30 @@ _delay:
         bx lr
 
 // ****************************GPIO REGISTER AND PIN PARAMS ***********************************
-init_output:                                    // init for OUTPUT //
+nit_output:                                    // init for OUTPUT //
         ldr r3, [sp, #8]                        // virt GPIO base
-        add r3, r3, #GPFSEL2                    // offset to GPFSELn = int(PIN#/10)= GPFSELn
+        add r3, r3, #GPFSEL2                    // offset to GPFSELn=int(PIN#/10)= GPFSELn
         ldr r2, [r3]                            // get contents of GPFSELn
-        orr r2, r2, #(1 << FSEL23)              // friendly set 3 bits re FSELn output
-        str r2, [r3]                            // store set bits at GPFSELn
+        orr r2, r2, #(1 << FSEL23)              // friendly set 3 bits ;FSELn=3(PIN# mod 10)
+        str r2, [r3]                            //
         bx lr
 
 set_pin:
         ldr r3, [sp, #8]                        // virt GPIO base
         add r3, r3, #GPSET0                     // offset to GPSETn = int(PIN#/31)=GPSETn
         ldr r2, [r3]                            // get content of GPSETn
-        orr r2, r2, #(1 << _23)                 // friendly PIN select
-        str r2,[r3]                             //
+        orr r2, r2, #(1 << _23)                 // friendly PIN select; _=(PIN# mod 32)
+        str r2,[r3]                             // _
         bx lr
 
 clear_pin:
         ldr r3, [sp, #8]                        // virt GPIO base
         add r3, r3, #GPCLR0                     // offset to GPCLRn= int(PIN#/31)=GPCLRn=
         ldr r2, [r3]                            // get content of GGPCLRn
-        orr r2, r2, #(1 << _23)                 // FSELn
-        str r2,[r3]                             // friendly PIN select
+        orr r2, r2, #(1 << _23)                 // friendly PIN select; _=(PIN# mod 32)
+        str r2,[r3]                             //
         bx lr
+
 // ********************************************************************************************
 
 open_file:
