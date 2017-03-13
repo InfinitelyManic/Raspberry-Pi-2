@@ -14,7 +14,7 @@
         compile:
         $ gcc -g gpio_init_test_via_mmap.s -o gpio_init_test_via_mmap
 
-        Last Revision Date: 03/10/2017
+        Last Revision Date: 03/13/2017
 */
 .bss
 .data
