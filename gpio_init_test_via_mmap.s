@@ -17,11 +17,11 @@
 */
 .bss
 .data
-        /*  TO DO LATER....
+        // TO DO LATER....
         fmt0:   .string "Please selet the PIN#!\n"
         fmt1:   .string "You selected PIN# %d\n"
         scan0:  .string  "%d"
-        */
+        
         .file:  .ascii          "/dev/mem\000"
         .align
 .text
