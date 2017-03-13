@@ -18,7 +18,7 @@
 */
 .bss
 .data
-        /*  TO DO....
+        /*  TO DO LATER....
         fmt0:   .string "Please selet the PIN#!\n"
         fmt1:   .string "You selected PIN# %d\n"
         scan0:  .string  "%d"
@@ -36,7 +36,7 @@
 main:
         nop
         sub sp, sp, #16                                                                                                                                                                      
-/*      TO DO...                                                                                                                                                                                     // Ask user to select PIN #                                                                                                                                                          1:
+/*      TO DO LATER...                                                                                                                                                                                     // Ask user to select PIN #                                                                                                                                                          1:
         bl _write0
         bl _scan0
         cmp r0, #53                             // max pins = 53
