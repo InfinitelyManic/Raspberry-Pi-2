@@ -73,8 +73,7 @@
         .endm
 
         .global main
-        .include "rpi_2_b_header.h"             // home made headers based on BCM2835 doc
-        .include "mymac.s"
+        .include "mymac.s"              // my personal macros  - for intDiv and mod macros below. You will need your own.
 
         .align
 main:
