@@ -20,7 +20,7 @@
         gpio_pin_init_array:    .word 5                                                                                                                                 
 .data                                                                                                                                                                   
         fmt0:   .string "Please select PIN#!\n"                                                                                                                         
-        fmt1:   .string "You selected PIN# %d\n"                                                                                                                        
+      //  fmt1:   .string "You selected PIN# %d\n"                                                                                                                        
         scan0:  .string  "%d"                                                                                                                                           
         .file:  .ascii          "/dev/mem\000"                                                                                                                          
         .align                                                                                                                                                          
