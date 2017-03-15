@@ -17,7 +17,7 @@
         Last Revision Date: 03/14/2017                                                                                                                                  
 */                                                                                                                                                                      
 .bss                                                                                                                                                                    
-        gpio_pin_init_array:    .word 5                                                                                                                                 
+        gpio_pin_init_array:    .zero 5                                                                                                                                 
 .data                                                                                                                                                                   
         fmt0:   .string "Please select PIN#!\n"                                                                                                                         
       //  fmt1:   .string "You selected PIN# %d\n"                                                                                                                        
