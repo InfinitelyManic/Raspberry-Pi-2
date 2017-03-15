@@ -36,7 +36,7 @@
                 mov r12, \PIN           //                                                                                                                              
                 // *************************************************
                 
-                   .calcGPFSELn\@:         // GPFSELn=int(PIN#/10) << 2                                                                                                    
+                .calcGPFSELn\@:         // GPFSELn=int(PIN#/10) << 2                                                                                                    
                 intDiv r12, #10         // int(PIN/10)                                                                                                                  
                 lsl r0, #2              // int(PIN/10) << 2                                                                                                             
                 str r0, [r9, #0]        // element 0                                                                                                                    
@@ -191,12 +191,12 @@ _scan0:
         ldr r0,=scan0                                                                                                                                                   
         mov r1, sp                                                                                                                                                      
         bl scanf                                                                                                                                                        
-        ldr r0,[sp]             // store entry                                                                                                                          
+        ldr r0,[sp]                             // store entry                                                                                                                          
         pop {r1-r3,pc}                                                                                                                                                  
                                                                                                                                                                         
 _write1:                                                                                                                                                                
         push {r1-r3,lr}                                                                                                                                                 
-        mov r1, r0              // output saved value                                                                                                                   
+        mov r1, r0                              // output saved value                                                                                                                   
         ldr r0,=fmt1                                                                                                                                                    
         bl printf                                                                                                                                                       
         pop {r1-r3,pc}                                                                                                                                                  
