@@ -74,7 +74,7 @@ init_output:                                    // init for OUTPUT //
         ldr r3, [sp, #8]                        // virt GPIO base
         add r3, r3, #GPFSEL2                    // offset to GPFSELn=int(PIN#/10)
         ldr r2, [r3]                            // get contents of GPFSELn
-        orr r2, r2, #(0b111 << FSEL23)              // friendly set 3 bits ;FSELn=3(PIN# mod 10)
+        orr r2, r2, #(0b001 << FSEL23)              // friendly set 3 bits ;FSELn=3(PIN# mod 10)
         str r2, [r3]                            //
         bx lr
 
