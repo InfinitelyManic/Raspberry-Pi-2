@@ -39,7 +39,8 @@ get_input:
 checkNumber:                                                                                                                                                            
         cmp r1, #100                                                                                                                                                    
         bge printGreater                                                                                                                                                
-                              printLess:                                                                                                                                                              
+                              
+printLess:                                                                                                                                                              
 //  r1 is already loaded with the number to print.                                                                                                                      
         ldr r0, =numOutputLesser                                                                                                                                        
         bl _print                                                                                                                                                       
