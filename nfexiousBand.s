@@ -96,7 +96,6 @@ myexit:
                                                                                                                                                                         
 _print:                                                                                                                                                                 
         push {lr}                                                                                                                                                       
-        mov r1, #0                                                                                                                                                      
         bl printf                                                                                                                                                       
         pop {pc}                                                                                                                                                        
                                                                                                                                                                         
