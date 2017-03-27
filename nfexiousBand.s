@@ -72,8 +72,9 @@ checkChar:
         bge printWeird                                                                                                                                                  
         cmp r1, #65                                                                                                                                                     
         bge printUppercase                                                                                                                                              
-        // b printWeird                               
-        tWeird:                                                                                                                                                             
+        // b printWeird                              
+        
+printtWeird:                                                                                                                                                             
 //  r1 is already loaded with the number to print.                                                                                                                      
         ldr r0, =strOutputWeird                                                                                                                                         
         bl _print                                                                                                                                                       
