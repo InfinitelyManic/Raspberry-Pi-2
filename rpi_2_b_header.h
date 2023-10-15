@@ -1,5 +1,5 @@
 /*
-        David @InfinitelyManic
+        David
         Raspberry Pi 2 Model B Rev 1.1
         Last Revision Date: 03/13/2017
 */
